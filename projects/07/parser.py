@@ -1,4 +1,4 @@
-from constatnt import *
+from constant import *
 
 class Parser():
     def __init__(self, filepath):
