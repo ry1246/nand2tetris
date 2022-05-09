@@ -198,7 +198,7 @@ class CodeWriter():
 
     def get_new_if_label(self):
         self.if_label_num += 1
-        return '_IF_LABEL' + str(self.label_num)
+        return '_IF_LABEL_' + str(self.label_num)
 
     def get_new_return_label(self):
         self.return_label_num += 1

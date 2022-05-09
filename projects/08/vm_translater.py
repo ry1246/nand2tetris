@@ -23,12 +23,12 @@ def main():
     else:
         if path.endswith("/"):
             path = path[:-1]
-        with CodeWriter(path + ".asm") as code_writer:
+        with CodeWriter(path + "/" + os.path.basename(path) + ".asm") as code_writer:
             files = glob.glob("%s/*" % path)
             for file in files:
                 if file.endswith(".vm"):
                     translate_file(file, code_writer)
-        print("Translated to", path + ".asm")
+        print("Translated to", path + "/" + os.path.basename(path) + ".asm")
 
 def translate_file(file, code_writer):
     filename, _ = os.path.splitext(os.path.basename(file))
@@ -47,7 +47,7 @@ def translate_file(file, code_writer):
             elif parser.command_type() == C_LABEL:
                 code_writer.write_named_label(parser.arg1())
             elif parser.command_type() == C_GOTO:
-                code_writer.write_got(parser.arg1())
+                code_writer.write_goto(parser.arg1())
             elif parser.command_type() == C_IF:
                 code_writer.write_if(parser.arg1())
             elif parser.command_type() == C_FUNCTION:
