@@ -1,0 +1,11 @@
+class Main {
+    function void main() {
+        var DrawingGame game;
+
+        let game = DrawingGame.new();
+        do game.run();
+        do game.dispose()
+
+        return;
+    }
+}
