@@ -93,7 +93,7 @@ class Tokens:
 
 TOKEN_MAP = {
     'class' : Tokens.CLASS,
-    'constructor': Tokens.CONSTRUCTOR.
+    'constructor': Tokens.CONSTRUCTOR,
     'function': Tokens.FUNCTION,
     'method': Tokens.METHOD,
     'field': Tokens.FIELD,

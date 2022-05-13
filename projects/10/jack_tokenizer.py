@@ -91,8 +91,8 @@ class JackTokenizer():
             else:
                 t_1 = self.judge_token(self.remained_line[0:i + 1])
                 if t_0:
-                    it t_1:
-                    continue
+                    if t_1:
+                        continue
                 else:
                     self.current_token = self.judge_token(self.remained_line[0:i])
                     self.remained_line = self.remained_line[i:]
