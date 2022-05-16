@@ -39,7 +39,7 @@ class VmWriter():
         elif command == Command.AND:
             self.write_code('and')
         elif command == Command.OR:
-            self.write_code('or'):
+            self.write_code('or')
         elif command == Command.NOT:
             self.write_code('not')
 
@@ -80,4 +80,4 @@ class VmWriter():
         elif segment == Segment.THIS:
             return 'this'
         else:
-            rase Exception('Unknown segment')
+            raise Exception('Unknown segment')
