@@ -1,4 +1,3 @@
-from _typeshed import IdentityFunction
 from const import *
 from jack_tokenizer import JackTokenizer
 from symbol_table import SymbolTable
@@ -114,7 +113,7 @@ class CompilationEngine():
         self.write_identifier_info('category: class')
         return self.compile_identifer()
 
-    def cpmpile_var_name(self. declaration=False, type=None, kind=None, let=False, call=False):
+    def cpmpile_var_name(self, declaration=False, type=None, kind=None, let=False, call=False):
         if declaration:
             self.symbol_table.define(self.tokenizer.see_next().token(), type, kind)
         elif let:
@@ -471,7 +470,7 @@ class CompilationEngine():
             self.compile_expression()
             self.compile_symbol(Tokens.RIGHT_ROUND_BRACKET)
         elif self.next_is(Tokens.TILDE):
-            self.compile_symbol(Tokens.TILDE):
+            self.compile_symbol(Tokens.TILDE)
             self.compile_term()
             self.vmw.write_arithmetic(Command.NOT)
         elif self.next_is(Tokens.MINUS):

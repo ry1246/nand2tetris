@@ -12,7 +12,7 @@ token_convert = {
 class JackTokenizer():
     def __init__(self, filepath):
         self.current_token = None
-        self.lineum = 0
+        self.linenum = 0
         self.remained_line = ''
         self.remained_tokens = []
 

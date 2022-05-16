@@ -1,9 +1,9 @@
 from const import *
 from compilation_engine import CompilationEngine
+from vm_writer import VmWriter
 
 import glob
 import argparse
-import os.path
 
 
 def main():
@@ -24,8 +24,8 @@ def main():
                 compile(filepath)
 
 def compile(filepath):
-    with VmWriter(filepatg[:-5] + ".vm") as code_writer
-        with CompilationEngine(filepath, code_wrier) as ce:
+    with VmWriter(filepath[:-5] + ".vm") as code_writer:
+        with CompilationEngine(filepath, code_writer) as ce:
             print("compiling %s ..." % filepath)
             ce.compile()
 
